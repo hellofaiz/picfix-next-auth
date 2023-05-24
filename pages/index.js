@@ -15,9 +15,6 @@ export default function Home() {
     signOut()
   }
   // if (status === 'loading') return <h1> loading... please wait</h1>; if (status === 'authenticated') {
-
-
-
   async function handleGithubSignIn() {
     signIn('github', { callbackUrl: process.env.GITHUB_URL })
   }
@@ -57,6 +54,9 @@ export default function Home() {
                 <div className="text-center bg-blue-500 ">
                   <label >Email</label>
                   <h1>{session.user.email}</h1>
+                </div>
+                <div className="text-center bg-blue-700 p-5 pl-20 ">
+                  <img src={session.user.image} alt="profile" style={{width:'100px', height:'100px',borderRadius:'50%'}} />
                 </div>
               </div>
             </div>
